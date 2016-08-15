@@ -1,0 +1,187 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Divertisanti ¡Diversión para Todos!</title>
+	<link rel="stylesheet" href="themes/divertisanti.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true"
+    ></script>
+    <script> 
+	 /*
+ * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
+ * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
+ */
+$( document ).on( "pageinit", "#map-page", function() {
+    var defaultLatLng = new google.maps.LatLng(20.4086045,-99.9733654);  // Default to Hollywood, CA when no geolocation support
+    if ( navigator.geolocation ) {
+        function success(pos) {
+            // Location found, show map with these coordinates
+            drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+        }
+        function fail(error) {
+            drawMap(defaultLatLng);  // Failed to find location, show default map
+        }
+        // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+        navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+    } else {
+        drawMap(defaultLatLng);  // No geolocation support, show default map
+    }
+    function drawMap(latlng) {
+        var myOptions = {
+            zoom: 14,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // Add an overlay to the map of current lat/lng
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "Greetings!"
+        });
+    }
+});
+</script>
+<script>
+$( document ).on( "click", ".show-page-loading-msg", function() {
+    var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+})
+.on( "click", ".hide-page-loading-msg", function() {
+    $.mobile.loading( "hide" );
+});
+</script>
+<script>
+imagenes = new Array();
+//Agrega tantas imágenes como necesites en el array
+imagenes[0] = "themes/images/slide1.png";
+imagenes[1] = "themes/images/slide2.png";
+imagenes[2] = "themes/images/slide3.png";
+imagenes[3] = "themes/images/slide4.png";
+imagenes[4] = "themes/images/slide5.png";
+siguiente = 0;
+
+function CambiaImagen()
+{
+dimensiones = $("#box-imagen").width();
+$("#box-imagen img").css({left: -dimensiones+"px"}).attr("src", imagenes[siguiente]);
+$("#box-imagen img").animate({left: "+="+dimensiones});
+$("#box-imagen a").attr("href", imagenes[siguiente]);
+
+siguiente = siguiente+1;
+if (siguiente >= imagenes.length)
+{
+siguiente = 0;
+}
+//Aquí puedes colocar el tiempo para cada transición de imagen
+transicion = 4000;
+setTimeout("CambiaImagen()", transicion);
+}
+
+$(function(){
+CambiaImagen();
+});
+</script>
+<style>
+
+#box
+{
+width: 100%;
+background: black;
+padding: 0px;
+border-radius: 4px;
+}
+
+#box-imagen{
+width: 100%;
+background: black;
+overflow: hidden;
+}
+
+#box-imagen img
+{
+position: relative;
+width: 100%;
+
+}
+</style>
+<script>  
+  
+  $(document).ready(function(){ 
+        $("#content2").load("http://divertisanti.com/servicios/"); 
+    });
+  
+  </script> 
+</head>
+<body>
+	<div data-role="page" id="page1" data-theme="d">
+		<div data-role="header"   data-position="fixed">
+			<h1><img src="themes/images/Divertisantilogo.png" style="width:100%"></h1>
+	    </div>
+			<div data-role="content" data-theme="d">
+<!--¡Renta de Inflables Rockolas-->
+<div id="box">
+<div id="box-imagen">
+<a href="themes/images/slide1.png"><img src="themes/images/slide1.png"></a>
+</div>
+</div>
+</div>
+		<div data-role="navbar" data-theme="d"  data-position="fixed" data-id="pie_fijo">
+        <ul>
+        <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active"   data-transition="pop">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top " data-transition="pop">Servicios</a></li>
+      <li><a href="#map-page" class="ui-btn ui-icon-location ui-btn-icon-top">Ubicación</a></li>
+        </ul>
+        </div>
+</div>
+
+	<div data-role="page" id="page2" data-theme="d">
+		<div data-role="header" data-position="fixed">
+			<h1><img src="Divertisantilogo.png" style="width:100%"></h1>
+		</div>
+		<div id="content2" data-role="content" data-theme="a">
+<iframe href="http://divertisanti.com/servicios/"  scrolling="auto" frameborder="0" width="100%" ></iframe>
+<br>
+</div>
+		<div data-role="navbar"  data-position="fixed" data-id="pie_fijo">
+        <ul>
+        <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top ui-btn-active" data-transition"pop">Servicios</a></li>
+      <li><a href="#map-page" class="ui-btn ui-icon-location ui-btn-icon-top">Ubicación</a></li>
+        </ul>
+        </div>
+</div>
+
+
+ <div data-role="page" id="map-page" data-url="map-page" data-theme="d">
+		<div data-role="header" data-position="fixed">
+			<h1><img src="Divertisantilogo.png" style="width:100%"></h1>
+	    </div>
+    <div role="main" class="ui-content" id="map-canvas">
+        <!-- map loads here... -->
+     </div>
+     	<div data-role="navbar" data-theme="d" data-position="fixed" data-id="pie_fijo">
+        <ul>
+        <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop"> INICIO </a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top" data-transition="pop">Servicios</a></li>
+      <li><a href="https://goo.gl/maps/njkn5oryZP22" class="ui-btn ui-icon-action ui-btn-icon-top">Como llego</a></li>
+        </ul>
+        </div>
+</div>
+</body>
+</html>
