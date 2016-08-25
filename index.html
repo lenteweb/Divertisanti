@@ -3,8 +3,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Divertisanti ¡Diversión para Todos!</title>
-	<link rel="stylesheet" href="themes/divertisanti.min.css" />
-	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="www/divertisanti.min.css" />
+	<link rel="stylesheet" href="www/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -69,11 +69,11 @@ $( document ).on( "click", ".show-page-loading-msg", function() {
 <script>
 imagenes = new Array();
 //Agrega tantas imágenes como necesites en el array
-imagenes[0] = "themes/images/slide1.png";
-imagenes[1] = "themes/images/slide2.png";
-imagenes[2] = "themes/images/slide3.png";
-imagenes[3] = "themes/images/slide4.png";
-imagenes[4] = "themes/images/slide5.png";
+imagenes[0] = "www/images/slide1.png";
+imagenes[1] = "www/images/slide2.png";
+imagenes[2] = "www/images/slide3.png";
+imagenes[3] = "www/images/slide4.png";
+imagenes[4] = "www/images/slide5.png";
 siguiente = 0;
 
 function CambiaImagen()
@@ -120,71 +120,175 @@ width: 100%;
 
 }
 </style>
-<script>  
-  
-  $(document).ready(function(){ 
-        $("#content2").load("http://divertisanti.com/servicios/"); 
-    });
-  
-  </script> 
 </head>
 <body>
 	<div data-role="page" id="page1" data-theme="d">
-		<div data-role="header"   data-position="fixed">
-			<h1><img src="themes/images/Divertisantilogo.png" style="width:100%"></h1>
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="d" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
+        <a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<p class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="www/images/Divertisantilogo.png" width="100%" height="" alt=""/></p>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:4271483598"> Llámanos </a>
 	    </div>
 			<div data-role="content" data-theme="d">
 <!--¡Renta de Inflables Rockolas-->
 <div id="box">
 <div id="box-imagen">
-<a href="themes/images/slide1.png"><img src="themes/images/slide1.png"></a>
+<a href="www/images/slide1.png"><img src="www/images/slide1.png"></a>
 </div>
 </div>
+	<div data-theme="d" data-form="ui-body-d" class="ui-body ui-body-b ui-corner-all"><p align="center"><strong>En Divertisanti Planeamos y organizamos todo tipo de eventos</strong></p></div>
 </div>
-<footer data-position="fixed" data-id="pie_fijo">
+<div data-role="footer" data-position="fixed" data-id="pie_fijo">
 		<div data-role="navbar" data-theme="d">
         <ul>
         <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top ui-btn-active"   data-transition="pop">INICIO</a></li>
-      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top " data-transition="pop">Servicios</a></li>
-      <li><a href="#map-page" class="ui-btn ui-icon-location ui-btn-icon-top">Ubicación</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-shop ui-btn-icon-top " data-transition="pop">Servicios</a></li>
+      <li><a href="#page3" class="ui-btn ui-icon-info ui-btn-icon-top">Contacto</a></li>
         </ul>
-        </div></footer>
+        </div></div>
 </div>
-
+<!-- Pagina de Servicios --->
 	<div data-role="page" id="page2" data-theme="d">
-		<div data-role="header" data-position="fixed">
-			<h1><img src="themes/images/Divertisantilogo.png" style="width:100%"></h1>
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="d" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
+        <a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<p class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="www/images/Divertisantilogo.png" width="100%" height="" alt=""/></p>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:4271483598"> Llámanos </a>
 		</div>
-		<div id="content2" data-role="content" data-theme="a">
-<iframe href="http://divertisanti.com/servicios/"  scrolling="auto" frameborder="0" width="100%" ></iframe>
-<br>
+		<div data-role="content" data-theme="d">
+<H4><span style="color:#009245">EN DIVERTISANTI</span>
+<br>¡Diversión para todos!</H4>
+<H5>OFRECEMOS:</H5>
+<p><a href="#popup1" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-left" data-rel="dialog" data-transition="pop">Servicio de Taquizas</a></p>
+<p><a href="#popup2" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-left" data-rel="dialog" data-transition="pop">Renta de Inflables</a></p>
+<p><a href="#popup3" class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-left" data-rel="dialog" data-transition="pop">Renta de Rockolas</a></p>
+<h5>ADEMÁS RENTAMOS: </h5>
+<div>Mesas, Sillas y Mantelería</div>
+<div>Salas Lounge</div>
+<div>Jardín para Eventos</div>
+<div>Calentadores de Exteriores</div>
 </div>
-<footer data-position="fixed" data-id="pie_fijo">
+<div data-role="footer" data-position="fixed" data-id="pie_fijo">
 		<div data-role="navbar">
         <ul>
         <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop">INICIO</a></li>
-      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top ui-btn-active" data-transition"pop">Servicios</a></li>
-      <li><a href="#map-page" class="ui-btn ui-icon-location ui-btn-icon-top">Ubicación</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-shop ui-btn-icon-top ui-btn-active" data-transition"pop">Servicios</a></li>
+      <li><a href="#page3" class="ui-btn ui-icon-info ui-btn-icon-top">Contacto</a></li>
         </ul>
-        </div></footer>
+        </div></div>
 </div>
 
+<!-- Página de Contacto --->
 
+	<div data-role="page" id="page3" data-theme="d">
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="d" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
+        <a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<p class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="www/images/Divertisantilogo.png" width="100%" height="" alt=""/></p>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:4271483598"> Llámanos </a>
+		</div>
+		<div data-role="content" data-theme="a">
+<h2 align="center">Estamos a sus órdenes en:</h2>
+<p align="center">SAN JOSE 1-D<br>
+COL SANTA CRUZ NIETO<br>
+C.P. 76804 SAN JUAN DEL RIO, QUERÉTARO.</p>
+
+<p>Lunes a Domingo de 9:00 a 20:00 Hrs</p>
+
+<h3 align="center">Si desea más Información Contáctenos...</h3>
+    <div align="center" data-role="controlgroup" data-theme="d">
+ <button class="ui-btn ui-icon-phone ui-btn-icon-left"><a href ="tel:4271483598" data-theme="d">Llámenos</a></button>
+<button class="ui-btn ui-icon-mail ui-btn-icon-left"><a href ="mailto:contacto@divertisanti.com" data-theme="d">Envíe Email</a></button>
+<button class="ui-btn ui-icon-comment ui-btn-icon-left"><a href ="sms:4271483598" data-theme="d">Envíe Mensaje SMS</a></button>
+</div>
+
+</div>
+<div data-role="footer" data-position="fixed" data-id="pie_fijo">
+		<div data-role="navbar">
+        <ul>
+        <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop">INICIO</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-shop ui-btn-icon-top" data-transition"pop">Servicios</a></li>
+      <li><a href="#map-page" class="ui-btn ui-icon-location ui-btn-icon-top">Ubicación</a></li>
+        </ul>
+        </div></div>
+</div>
+
+<!-- Pagina de Ubicación --->
  <div data-role="page" id="map-page" data-url="map-page" data-theme="d">
-		<div data-role="header" data-position="fixed">
-			<h1><img src="themes/images/Divertisantilogo.png" style="width:100%"></h1>
+		<div class="ui-header ui-bar-a" data-swatch="a" data-theme="d" data-form="ui-bar-a" data-role="header" role="banner" data-position="fixed">
+        <a role="button" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-icon-home ui-btn-icon-notext ui-shadow" title=" INICIO " data-form="ui-icon" href="#page1"> INICIO </a>
+		<p class="ui-title" tabindex="0" role="heading" aria-level="1"><img src="www/images/Divertisantilogo.png" width="100%" height="" alt=""/></p>
+		<a role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-phone ui-btn-icon-notext ui-shadow" title=" Llámanos " data-form="ui-icon" href="tel:4271483598"> Llámanos </a>
 	    </div>
     <div role="main" class="ui-content" id="map-canvas">
         <!-- map loads here... -->
      </div>
-     <footer data-position="fixed" data-id="pie_fijo">
+     <div data-role="footer" data-position="fixed" data-id="pie_fijo">
      	<div data-role="navbar" data-theme="d">
         <ul>
         <li><a href="#page1" class="ui-btn ui-icon-home ui-btn-icon-top" data-transition="pop"> INICIO </a></li>
-      <li><a href="#page2" class="ui-btn ui-icon-navigation ui-btn-icon-top" data-transition="pop">Servicios</a></li>
+      <li><a href="#page2" class="ui-btn ui-icon-shop ui-btn-icon-top" data-transition="pop">Servicios</a></li>
       <li><a href="https://goo.gl/maps/njkn5oryZP22" class="ui-btn ui-icon-action ui-btn-icon-top">Como llego</a></li>
         </ul>
-        </div></footer>
+        </div></div>
+</div>
+<!-- Start of third page: #popup Taquizas -->
+<div data-role="page" id="popup1">
+
+	<div data-role="header" data-theme="d">
+		<h1>Taquizas</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" style="background-color:#31797D">
+
+<div>ASADOS: Cabeza de res, Carne asada, adobada, Pechuga de pollo, Tripa, Suadero, Pastor, Longaniza.<br>Gran variedad de Tacos de Guisado y más...</div>
+<div>Para los peques<br>
+Milanesa de pollo o res, Huevo con salchicha o jamón, Papas con salchicha, Spaghetti con jamón a la crema, Nuggets de pollo</div>
+<div>Nuestras taquizas incluyen salsas, tortillas, frijoles y más...</div>
+		<p align="center"><a href="#page3" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left" data-theme="d">Solicite Cotización"</a></p>
+        <p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a "Servicios"</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="d">
+		<h4>DIVERISANTI</h4>
+	</div><!-- /footer -->
+</div>
+<!-- Start of third page: #popup Inflables -->
+<div data-role="page" id="popup2">
+
+	<div data-role="header" data-theme="d">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Popup</h2>
+		<p>Tengo una ID de "Popup" en mi página de contenedor y solo se ve como un diálogo porque el vínculo que me tenía una <code>data-rel="dialog"</code> atribuir la que me da este aspecto inserción y una <code>data-transition="pop"</code> atribuir a cambiar la transición a estallar. Sin esto, me gustaría ser de estilo como una página normal.</p>
+        <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+<textarea id="messageTxt" placeholder="Enter message"></textarea>
+<input type="button" onclick="app.sendSms()" value="Send SMS" />
+		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a la página "Inicio"</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div>
+<!-- Start of third page: #popup Rockolas -->
+<div data-role="page" id="popup3">
+
+	<div data-role="header" data-theme="d">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Popup</h2>
+		<p>Tengo una ID de "Popup" en mi página de contenedor y solo se ve como un diálogo porque el vínculo que me tenía una <code>data-rel="dialog"</code> atribuir la que me da este aspecto inserción y una <code>data-transition="pop"</code> atribuir a cambiar la transición a estallar. Sin esto, me gustaría ser de estilo como una página normal.</p>
+        <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+<textarea id="messageTxt" placeholder="Enter message"></textarea>
+<input type="button" onclick="app.sendSms()" value="Send SMS" />
+		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a la página "Inicio"</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
 </div>
 </body>
 </html>
