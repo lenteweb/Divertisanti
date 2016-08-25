@@ -5,7 +5,7 @@ id = "com.divertisanti" version = "1.0.0">
 <name>Divertisanti</name>
 
 <description>
-Renta de Inflabes, Rockolas, Brincolines, mesas, sillas y Jardín para fiestas en San Juan del Rio, Querétaro
+Organixación de todo tipo de eventos, Taquizas, Renta de Inflabes, Rockolas, Brincolines, mesas, sillas y Jardín para fiestas en San Juan del Rio, Querétaro
 </description>
 
 <autor href="http://unaweb.net" email="webmaster@unaweb.net">
@@ -39,19 +39,7 @@ Carlos Palacios Macedo
 		
 	<access origin="*" />
 		
-	<!-- agregados -->
-	
-<access origin="*" launch-external="yes" />
-<access origin="http://divertisanti.com/servicios/" />
-<access origin="sms:*" launch-external="yes" />
-<access origin="geo:*" launch-external="yes" />
-<access origin="http://divertisanti.com/*" launch-external="yes" />
-<access origin="http://*" launch-external="yes" />
-<access origin="https://*" launch-external="yes" />
-<access origin="*" launch-external="yes" />
-<allow-navigation href="*" />
 
-<!-- fin agregados -->
 	
 	<plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
