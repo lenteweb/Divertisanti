@@ -19,6 +19,10 @@ Carlos Palacios Macedo
   <platform name="android">
     <preference name="Fullscreen" value="true" />
 	<preference name="orientation" value="portrait" />
+	<splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
   </platform>
   
     <platform name="ios">
@@ -30,12 +34,15 @@ Carlos Palacios Macedo
 	  <preference name="DisallowOverscroll" value="true"/>
 	  <preference name="phonegap-version" value="cli-6.3.0" />
 	  
+	  <preference name="SplashScreenDelay" value="3000" />
+<preference name="SplashMaintainAspectRatio" value="true | false" />
+<preference name="SplashShowOnlyFirstTime" value="true | false" />
+	  
+	  
 	<plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-device-motion" />
     <plugin name="cordova-plugin-device-orientation" />
     <plugin name="cordova-plugin-geolocation" />
-	<plugin name="cordova-plugin-whitelist" spec="~1" />
-	<plugin name="cordova-plugin-inappbrowser"/>
 		
 	<access origin="*" />
 		
@@ -48,6 +55,7 @@ Carlos Palacios Macedo
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+
 
 
    <!--
